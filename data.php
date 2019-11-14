@@ -100,9 +100,9 @@
 		$dat = mysql_query("SELECT * FROM data JOIN rules ON data.pelanggaran = rules.id_rules WHERE 
     	tglkej LIKE '%$caritgl%'
 		and npk LIKE '%$cari%' 
-    	and nama LIKE '%$cari%'
-        and data.tindakan LIKE '%$tindakan%'
-        ORDER by tglkej");
+		and nama LIKE '%$cari%'
+		and data.tindakan LIKE '%$tindakan%'
+		ORDER by tglkej");
 	}else{
 		$dat=mysql_query("select * from data JOIN rules ON data.pelanggaran = rules.id_rules where data.tl='$namtl'order by tglkej desc limit $start, $per_hal ");
 	}
