@@ -98,7 +98,7 @@
 		$cari = $_POST['cari'];
 		$tindakan=$_POST['tindakan'];
 		$dat = mysql_query("SELECT * FROM data JOIN rules ON data.pelanggaran = rules.id_rules WHERE 
-    	tglkej LIKE '%$caritgl%'
+    		tglkej LIKE '%$caritgl%'
 		and npk LIKE '%$cari%' 
 		and nama LIKE '%$cari%'
 		and data.tindakan LIKE '%$tindakan%'
