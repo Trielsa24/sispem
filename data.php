@@ -97,12 +97,13 @@
 		$caritgl= date('Y-m-d', strtotime($caritgl));
 		$cari = $_POST['cari'];
 		$tindakan=$_POST['tindakan'];
-		$dat = mysql_query("SELECT * FROM data JOIN rules ON data.pelanggaran = rules.id_rules WHERE 
-    		tglkej LIKE '%$caritgl%'
-		and npk LIKE '%$cari%' 
-		and nama LIKE '%$cari%'
-		and data.tindakan LIKE '%$tindakan%'
-		ORDER by tglkej");
+		$dat = mysql_query("select * from data JOIN rules ON data.pelanggaran = rules.id_rules where 
+		data.tglkej LIKE '%$caritgl%' 
+		AND data.npk LIKE '%$cari%' 
+		AND data.nama LIKE '%$cari%' 
+		AND data.tindakan LIKE '%$tindakan%' 
+		order by tglkej desc limit $start, $per_hal 
+		");
 	}else{
 		$dat=mysql_query("select * from data JOIN rules ON data.pelanggaran = rules.id_rules where data.tl='$namtl'order by tglkej desc limit $start, $per_hal ");
 	}
